@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Todo Text File
 " Maintainer: Adrien Giboire
-" Latest Revision: 20 February 2018
+" Latest Revision: 16 January 2020
 
 if exists("b:current_syntax")
   finish
@@ -9,9 +9,9 @@ endif
 
 syntax match todoAssignee     '@[^[:blank:]]\+'
 syntax match todoContent      '.+'
-syntax match todoTodo         '^t\s.\+'           contains=todoContent,todoAssignee
-syntax match todoDone         '^d\s.\+'           contains=todoContent,todoAssignee
-syntax match todoInProgress   '^i\s.\+'           contains=todoContent,todoAssignee
+syntax match todoTodo         '^\s*t\s.\+'  contains=todoContent,todoAssignee
+syntax match todoDone         '^\s*d\s.\+'   contains=todoContent,todoAssignee
+syntax match todoInProgress   '^\s*i\s.\+'   contains=todoContent,todoAssignee
 syntax match todoProject      '^[^[:blank:]]\+:$' contains=NONE
 
 let b:current_syntax = "todo"
